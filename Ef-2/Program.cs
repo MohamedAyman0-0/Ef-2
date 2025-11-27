@@ -61,7 +61,7 @@ namespace Ef_2
         public class Department
         {
             public int ID { get; set; }
-         
+
             [Required, MaxLength(50)]
             public string Name { get; set; } = string.Empty;
 
@@ -115,7 +115,7 @@ namespace Ef_2
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-              
+                optionsBuilder.UseSqlServer(@"Server=.;Database=ITIDb;Trusted_Connection=True;");
             }
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
